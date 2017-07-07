@@ -81,7 +81,6 @@
         android:layout_marginBottom="174dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editText"
-        android:onClick="goToSignUp"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -97,8 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button3"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        android:onClick="goBack"/>
+        app:layout_constraintHorizontal_bias="0.503" />
 
 
 

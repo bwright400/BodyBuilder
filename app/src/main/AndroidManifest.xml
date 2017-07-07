@@ -28,8 +28,8 @@
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainScreen"
-            android:label="@string/title_activity_main_screen"
+            android:name=".CreateNewWorkout"
+            android:label="@string/title_activity_create_new_workout"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

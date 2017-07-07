@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -56,8 +57,22 @@ public class Login extends AppCompatActivity {
                 // ...
             }
         };
-        setEmail = (EditText) findViewById(R.id.editText);
-        setPassword = (EditText)findViewById(R.id.editText2);
+        Button register = (Button) findViewById(R.id.button3);
+        Button main_menu = (Button) findViewById(R.id.button4);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn(v);
+            }
+        });
+        main_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack(v);
+            }
+        });
+
     }
 
     @Override
@@ -75,12 +90,11 @@ public class Login extends AppCompatActivity {
     }
 
     public void signIn(View view) {
-        String getEmail, getPassword = null;
+        setEmail = (EditText) findViewById(R.id.editText);
+        setPassword = (EditText)findViewById(R.id.editText2);
 
-        getEmail = setEmail.getText().toString();
-        getPassword = setPassword.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(getEmail, getPassword)
+        mAuth.signInWithEmailAndPassword(setEmail.getText().toString(),
+                setPassword.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -94,8 +108,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Intent intent = new Intent(Login.this, MainScreen.class);
-                            startActivity(intent);
+                            Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
                         }
 
                         // ...

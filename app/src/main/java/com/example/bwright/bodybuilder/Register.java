@@ -11,14 +11,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthRecentLoginRequiredException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
@@ -63,30 +73,94 @@ public class Register extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
         confirm_pass = (EditText) findViewById(R.id.confirm_pass);
+
+
+        Button button = (Button) findViewById(R.id.register);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                createNewUser(view);
+            }
+        });
+    }
+
+    public void clearFields() {
+        first_name.getText().clear();
+        last_name.getText().clear();
+        email.getText().clear();
+        password.getText().clear();
+
+    }
+
+    public void addUserToFirebase() {
+
+
     }
 
     public void createNewUser(View view) {
-        mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("New User Created", "createUserWithEmail:onComplete:" + task.isSuccessful());
+        if (first_name.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "Type First Name", Toast.LENGTH_SHORT).show();
+        }
+        else if (last_name.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "Type Last Name", Toast.LENGTH_SHORT).show();
+        }
+        else if (email.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "Type Email", Toast.LENGTH_SHORT).show();
+        }
+        else if (password.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "Type Password", Toast.LENGTH_SHORT).show();
+        }
+        else if (confirm_pass.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "Confirm Your Password", Toast.LENGTH_SHORT).show();
+        }
+        else if (!password.getText().toString().equals(confirm_pass.getText().toString())) {
+            Toast.makeText(Register.this, "Passwords Don't Match", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d("New User Created", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(Register.this, "Authorization Failed", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Register.this, Login.class);
-                            startActivity(intent);
-                        }
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
 
-                        // ...
-                    }
-                });
+                            if (!task.isSuccessful()) {
+                                if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                    Toast.makeText(Register.this, "User with this email already exists.", Toast.LENGTH_SHORT).show();
+                                }
+                                else if (task.getException() instanceof FirebaseNetworkException) {
+                                    Toast.makeText(Register.this, "Please Check Your Connection", Toast.LENGTH_SHORT).show();
+                                }
+                                else if (task.getException() instanceof FirebaseAuthWeakPasswordException) {
+                                    Toast.makeText(Register.this, "Password not strong enough", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(Register.this, "Authorization Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            else {
+                                Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                                Map<String, Object> map = new HashMap<String, Object>();
+                                map.put("Name", first_name.getText().toString() + " " + last_name.getText().toString());
+                                map.put("Email", email.getText().toString());
+                                map.put("Password", email.getText().toString());
+
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference myRef = database.getReference("users");
+                                myRef.child(mAuth.getCurrentUser().getUid()).updateChildren(map);
+
+                                clearFields();
+                                Intent intent = new Intent(Register.this, Login.class);
+                                startActivity(intent);
+                            }
+
+                            // ...
+                        }
+                    });
+        }
+
     }
     @Override
     public void onStart() {
