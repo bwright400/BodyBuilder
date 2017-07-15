@@ -109,6 +109,9 @@ public class Login extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this, LoadWorkouts.class);
+                            Toast.makeText(Login.this, "Got It", Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
                         }
 
                         // ...
