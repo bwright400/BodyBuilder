@@ -23,11 +23,11 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <!--<ImageView-->
-                <!--android:id="@+id/img_thumbnail"-->
-                <!--android:layout_width="45dp"-->
-                <!--android:layout_height="45dp"-->
-                <!--android:layout_gravity="left|center_vertical" />-->
+            <ImageView
+                android:id="@+id/img_thumbnail"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="left|center_vertical" />
 
             <TextView
                 android:id="@+id/name"

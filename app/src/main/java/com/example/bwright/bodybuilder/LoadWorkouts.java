@@ -17,6 +17,7 @@ public class LoadWorkouts extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_workouts);
+
         // 1. get a reference to recyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -25,10 +26,13 @@ public class LoadWorkouts extends Activity {
 
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         // 3. create an adapter
-        WorkoutAdapter mAdapter = new WorkoutAdapter(newWorkout.getArms());
+        WorkoutAdapter mAdapter = new WorkoutAdapter(newWorkout.getTitles());
+
         // 4. set adapter
         recyclerView.setAdapter(mAdapter);
+
         // 5. set item animator to DefaultAnimator
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 

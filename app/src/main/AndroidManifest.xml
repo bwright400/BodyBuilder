@@ -27,10 +27,6 @@
             android:name=".Login"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!--<activity-->
-            <!--android:name=".WorkoutAdapter"-->
-            <!--android:label="@string/title_activity_workout_adapter"-->
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
         <activity
             android:name=".MainWorkout"
             android:label="@string/title_activity_main_workout"
@@ -40,11 +36,6 @@
             android:name=".LoadWorkouts"
             android:label="LoadWorkouts"
             android:theme="@style/AppTheme.NoActionBar" />
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
     </application>
 
 </manifest>

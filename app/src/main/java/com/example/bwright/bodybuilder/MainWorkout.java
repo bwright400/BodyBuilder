@@ -34,41 +34,62 @@ public class MainWorkout extends AppCompatActivity {
             }
         });
 
+        // 1. get a reference to recyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        //workoutsAdapter = new WorkoutsAdapter(workoutList, workoutTitles);
-        RecyclerView.LayoutManager wLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(wLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        //recyclerView.setAdapter(workoutsAdapter);
-
-        prepareWorkoutList();
-    }
-
-
-    private void prepareWorkoutList() {
+        // this is data for recycler view
         NewWorkout newWorkout = new NewWorkout();
 
-        workoutTitles.add(newWorkout.getTitleForCore());
-        workoutTitles.add(newWorkout.getTitleForLowerBody());
-        workoutTitles.add(newWorkout.getTitleForChest());
-        workoutTitles.add(newWorkout.getTitleForShoulders());
-        workoutTitles.add(newWorkout.getTitleForBack());
-        workoutTitles.add(newWorkout.getTitleForArms());
-        workoutTitles.add(newWorkout.getTitleForCardio());
-        workoutTitles.add(newWorkout.getTitleForStretches());
+        // 2. set layoutManger
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        workoutList.add(newWorkout.getCore());
-        workoutList.add(newWorkout.getLowerBody());
-        workoutList.add(newWorkout.getChest());
-        workoutList.add(newWorkout.getShoulders());
-        workoutList.add(newWorkout.getBack());
-        workoutList.add(newWorkout.getArms());
-        workoutList.add(newWorkout.getCardio());
-        workoutList.add(newWorkout.getStretches());
+        // 3. create an adapter
+        WorkoutAdapter mAdapter = new WorkoutAdapter(newWorkout.getTitles());
 
-        //workoutsAdapter.notifyDataSetChanged();
+        // 4. set adapter
+        recyclerView.setAdapter(mAdapter);
+
+        // 5. set item animator to DefaultAnimator
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
+
+
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+//
+//        //workoutsAdapter = new WorkoutsAdapter(workoutList, workoutTitles);
+//        RecyclerView.LayoutManager wLayoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(wLayoutManager);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+//        //recyclerView.setAdapter(workoutsAdapter);
+//
+//        prepareWorkoutList();
     }
+
+
+//    private void prepareWorkoutList() {
+//        NewWorkout newWorkout = new NewWorkout();
+//
+//        workoutTitles.add(newWorkout.getTitleForCore());
+//        workoutTitles.add(newWorkout.getTitleForLowerBody());
+//        workoutTitles.add(newWorkout.getTitleForChest());
+//        workoutTitles.add(newWorkout.getTitleForShoulders());
+//        workoutTitles.add(newWorkout.getTitleForBack());
+//        workoutTitles.add(newWorkout.getTitleForArms());
+//        workoutTitles.add(newWorkout.getTitleForCardio());
+//        workoutTitles.add(newWorkout.getTitleForStretches());
+//
+//        workoutList.add(newWorkout.getCore());
+//        workoutList.add(newWorkout.getLowerBody());
+//        workoutList.add(newWorkout.getChest());
+//        workoutList.add(newWorkout.getShoulders());
+//        workoutList.add(newWorkout.getBack());
+//        workoutList.add(newWorkout.getArms());
+//        workoutList.add(newWorkout.getCardio());
+//        workoutList.add(newWorkout.getStretches());
+//
+//        //workoutsAdapter.notifyDataSetChanged();
+//    }
 
 }

@@ -50,7 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.main) {
-            return true;
+
+        }
+        else if (id == R.id.signingIn) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+
+        }
+
+        else if (id == R.id.registering) {
+            Intent intent = new Intent(this, Register.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

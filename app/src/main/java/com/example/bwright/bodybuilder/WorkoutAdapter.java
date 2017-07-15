@@ -37,7 +37,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         final String name = mItems.get(i);
         viewHolder.name.setText(name);
-//        viewHolder.imgThumbnail.setImageResource(vowels.getThumbnail());
+        viewHolder.imgThumbnail.setImageResource(R.drawable.ic_dumbell);
         viewHolder.button25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,13 +54,13 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-//        public ImageView imgThumbnail;
+        public ImageView imgThumbnail;
         public TextView name;
         public Button button25;
 
         public ViewHolder(View itemView) {
             super(itemView);
-//            imgThumbnail = (ImageView) itemView.findViewById(R.id.img_thumbnail);
+            imgThumbnail = (ImageView) itemView.findViewById(R.id.img_thumbnail);
             name = (TextView) itemView.findViewById(R.id.name);
             button25 = (Button) itemView.findViewById(R.id.button25);
         }

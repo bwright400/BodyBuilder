@@ -31,6 +31,7 @@ public class NewWorkout {
         this.cardio = new ArrayList<>();
         this.stretches = new ArrayList<>();
 
+        setUpTitles();
         setUpCoreList();
         setUpLowerBodyList();
         setUpChestList();
