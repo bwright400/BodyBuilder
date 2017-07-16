@@ -105,5 +105,6 @@
     <string name="title_activity_movie_example">MovieExample</string>
     <string name="title_activity_main_workout">MainWorkout</string>
     <string name="title_activity_workouts_adapter">WorkoutsAdapter</string>
+    <string name="title_activity_load_exercises">LoadExercises</string>
 
 </resources>

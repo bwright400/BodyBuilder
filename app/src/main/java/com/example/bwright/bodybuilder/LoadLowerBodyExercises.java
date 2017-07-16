@@ -1,17 +1,17 @@
 package com.example.bwright.bodybuilder;
 
 import android.app.Activity;
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
+/**
+ * Created by bwrig on 7/15/2017.
+ */
 
-public class LoadWorkouts extends AppCompatActivity {
-
+public class LoadLowerBodyExercises extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +27,12 @@ public class LoadWorkouts extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 3. create an adapter
-        WorkoutAdapter mAdapter = new WorkoutAdapter(this, newWorkout.getTitles());
+        ExerciseAdapter mAdapter = new ExerciseAdapter(newWorkout.getLowerBody());
 
         // 4. set adapter
         recyclerView.setAdapter(mAdapter);
 
         // 5. set item animator to DefaultAnimator
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
     }
 }

@@ -7,6 +7,8 @@ import java.util.List;
  * Created by bwrig on 7/9/2017.
  */
 
+
+
 public class NewWorkout {
     private List<String> titles, core, lower_body, chest, shoulders, back, arms, cardio, stretches;
     private final String titleForCore, titleForLowerBody, titleForChest, titleForShoulders, titleForBack, titleForArms, titleForCardio, titleForStretches;
@@ -117,35 +119,35 @@ public class NewWorkout {
 
 
 
-    public String getTitleForCore() {
+    private String getTitleForCore() {
         return titleForCore;
     }
 
-    public String getTitleForLowerBody() {
+    private String getTitleForLowerBody() {
         return titleForLowerBody;
     }
 
-    public String getTitleForChest() {
+    private String getTitleForChest() {
         return titleForChest;
     }
 
-    public String getTitleForShoulders() {
+    private String getTitleForShoulders() {
         return titleForShoulders;
     }
 
-    public String getTitleForBack() {
+    private String getTitleForBack() {
         return titleForBack;
     }
 
-    public String getTitleForArms() {
+    private String getTitleForArms() {
         return titleForArms;
     }
 
-    public String getTitleForCardio() {
+    private String getTitleForCardio() {
         return titleForCardio;
     }
 
-    public String getTitleForStretches() {
+    private String getTitleForStretches() {
         return titleForStretches;
     }
 

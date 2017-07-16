@@ -92,7 +92,6 @@ public class Login extends AppCompatActivity {
     public void signIn(View view) {
         setEmail = (EditText) findViewById(R.id.editText);
         setPassword = (EditText)findViewById(R.id.editText2);
-
         mAuth.signInWithEmailAndPassword(setEmail.getText().toString(),
                 setPassword.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -110,7 +109,6 @@ public class Login extends AppCompatActivity {
                         else {
                             Toast.makeText(Login.this, "Login Success", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Login.this, LoadWorkouts.class);
-                            Toast.makeText(Login.this, "Got It", Toast.LENGTH_SHORT).show();
                             startActivity(intent);
                         }
 

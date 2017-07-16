@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -27,14 +28,42 @@
             android:name=".Login"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MainWorkout"
-            android:label="@string/title_activity_main_workout"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Tester" />
         <activity
             android:name=".LoadWorkouts"
             android:label="LoadWorkouts"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadArmExercises"
+            android:label="LoadArmExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadBackExercises"
+            android:label="LoadBackExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadCardioExercises"
+            android:label="LoadCardioExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadChestExercises"
+            android:label="LoadChestExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadCoreExercises"
+            android:label="LoadCoreExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadLowerBodyExercises"
+            android:label="LoadLowerBodyExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadShoulderExercises"
+            android:label="LoadShoulderExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoadStretchExercises"
+            android:label="LoadStretchExercises"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
