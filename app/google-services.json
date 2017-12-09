@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1058886543147",
-    "firebase_url": "https://bodybuilder-af983.firebaseio.com",
-    "project_id": "bodybuilder-af983",
-    "storage_bucket": "bodybuilder-af983.appspot.com"
+    "project_number": "61067846088",
+    "firebase_url": "https://bodybuilder-5d5ac.firebaseio.com",
+    "project_id": "bodybuilder-5d5ac",
+    "storage_bucket": "bodybuilder-5d5ac.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1058886543147:android:2de2a95e0ae024cd",
+        "mobilesdk_app_id": "1:61067846088:android:2de2a95e0ae024cd",
         "android_client_info": {
           "package_name": "com.example.bwright.bodybuilder"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1058886543147-rg4tb2d6ibc8nqqj6d3c6oe8ikgn9gnf.apps.googleusercontent.com",
+          "client_id": "61067846088-s9ikbqt66tvq6cch3qr2h4qoujnqk3np.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.bwright.bodybuilder",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "1058886543147-4ujrjgkev417k7pjk9d4q4c6ri4akt7b.apps.googleusercontent.com",
+          "client_id": "61067846088-gdtej4obnrc81edr16oiktp29bhtbu62.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDat7GPenWXb25N9sREne8eMPDNwXgc8oc"
+          "current_key": "AIzaSyCipg1HPhh9OGeYr7wX5cvJbaZ5yLoABEc"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1058886543147-4ujrjgkev417k7pjk9d4q4c6ri4akt7b.apps.googleusercontent.com",
+              "client_id": "61067846088-gdtej4obnrc81edr16oiktp29bhtbu62.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

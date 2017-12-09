@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
@@ -86,7 +87,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView img;
-        public TextView name;
+        private TextView name;
         private Button button25;
 
         public ViewHolder(View itemView) {

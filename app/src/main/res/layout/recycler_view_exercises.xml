@@ -45,7 +45,8 @@ android:orientation="horizontal">
                 android:layout_width="100dp"
                 android:layout_height="62dp"
                 android:paddingBottom="40sp"
-                android:paddingTop="40sp" />
+                android:paddingTop="40sp"
+                android:layout_gravity="start|center_vertical"/>
 
         </LinearLayout>
 

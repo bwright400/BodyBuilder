@@ -23,7 +23,7 @@ public class LoadCoreExercises extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 3. create an adapter
-        ExerciseAdapter mAdapter = new ExerciseAdapter(newWorkout.getArms());
+        ExerciseAdapter mAdapter = new ExerciseAdapter(newWorkout.getCore());
 
         // 4. set adapter
         recyclerView.setAdapter(mAdapter);

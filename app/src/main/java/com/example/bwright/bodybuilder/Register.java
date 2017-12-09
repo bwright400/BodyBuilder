@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -142,6 +143,7 @@ public class Register extends AppCompatActivity {
                             }
                             else {
                                 Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                                Date date = new Date();
                                 Map<String, Object> map = new HashMap<String, Object>();
                                 map.put("Name", first_name.getText().toString() + " " + last_name.getText().toString());
                                 map.put("Email", email.getText().toString());

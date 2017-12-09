@@ -56,65 +56,83 @@ public class NewWorkout {
     }
 
     private void setUpCoreList() {
+//        core.add(titleForCore);
         core.add("Crunch's");
         core.add("Push Ups");
         core.add("Planks");
         core.add("Raised Knee-In's");
         core.add("Flutter Kicks");
+        core.add("Submit");
     }
 
     private void setUpLowerBodyList() {
+//        lower_body.add(titleForLowerBody);
         lower_body.add("Squats");
         lower_body.add("Leg Extension");
         lower_body.add("Leg Press");
         lower_body.add("Lunges");
         lower_body.add("Calf Raises");
+        lower_body.add("Submit");
     }
 
     private void setUpChestList() {
+//        chest.add(titleForChest);
         chest.add("Bench Press");
         chest.add("Dumbbell Press");
         chest.add("Dumbbell Flyes");
         chest.add("Abdomen Extensions");
         chest.add("Plyometric Push Ups");
+        chest.add("Submit");
     }
 
     private void setUpShouldersList() {
+//        shoulders.add(titleForShoulders);
         shoulders.add("Upright Cable Row");
         shoulders.add("Front Barbell Raise");
         shoulders.add("Cable Front Raise");
         shoulders.add("Machine Shoulder Press");
         shoulders.add("Leaning Dumbbell Lateeral Raise");
+        shoulders.add("Submit");
     }
 
     private void setUpBackList() {
+//        back.add(titleForBack);
         back.add("Barbell Deadlift");
         back.add("Bent-Over Barbell Deadlift");
         back.add("Wide-Grip Pull-Ups");
         back.add("Standing T-Bar Row");
+        back.add("Reverse-Grip Pull Ups");
+        back.add("Submit");
     }
 
     private void setUpArmsList() {
+//        arms.add(titleForArms);
         arms.add("Hammer Curl's");
         arms.add("Dips");
         arms.add("Neutral Grip Triceps Extension");
         arms.add("EZ Bar Preacher Curl");
         arms.add("Overhead Press");
+        arms.add("Submit");
     }
 
     private void setUpCardioList() {
+//        cardio.add(titleForCardio);
         cardio.add("Stair Climb");
         cardio.add("Treadmill Running");
         cardio.add("Cycling");
         cardio.add("Swimming");
+        cardio.add("Running");
+        cardio.add("Submit");
     }
 
     private void setUpStretchList() {
+//        stretches.add(titleForStretches);
         stretches.add("Runner's Stretch");
         stretches.add("Standing Side Stretch");
         stretches.add("Forward Hang");
         stretches.add("Low Lunge Arch");
         stretches.add("Seated Back Twist");
+        stretches.add("Submit");
     }
 
 
